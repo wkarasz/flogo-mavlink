@@ -1,0 +1,26 @@
+{
+  "name": "elmdirect",
+  "version": "0.0.1",
+  "type": "flogo:activity",
+  "description": "Execute raw ELM commands",
+  "title": "ELM Direct Command",
+  "ref": "github.com/wkarasz/flogo-elmobd/activity/elmdirect",
+  "author": "William Karasz",
+  "inputs":[
+    {
+      "name": "devicePath",
+      "type": "string",
+      "required": true
+    },
+    { "name": "directCmd",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "type": "string"
+    }
+  ]
+}

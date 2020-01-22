@@ -1,0 +1,45 @@
+{
+  "name": "mavlink-heartbeat",
+  "version": "0.0.1",
+  "type": "flogo:trigger",
+  "ref": "github.com/wkarasz/flogo-mavlink/trigger/mavlink-heartbeat",
+  "description": "Receive mavlink heartbeats",
+  "author": "William Karasz <wkarasz@tibco.com>",
+  "settings":[
+    {
+      "name": "port",
+      "type": "integer",
+      "required": true
+    }
+  ],
+  "output": [
+    {
+      "name": "MAV_TYPE",
+      "type": "string"
+    },
+    {
+      "name": "MAV_AUTOPILOT",
+      "type": "string"
+    },
+    {
+      "name": "MAV_MODE_FLAG",
+      "type": "string"
+    },
+    {
+      "name": "custom_mode",
+      "type": "string"
+    },
+    {
+      "name": "MAV_STATE",
+      "type": "string"
+    },
+    {
+      "name": "mavlink_version",
+      "type": "string"
+    }
+  ],
+  "handler": {
+    "settings": [
+    ]
+  }
+}
