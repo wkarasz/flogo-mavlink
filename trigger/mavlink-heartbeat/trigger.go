@@ -1,4 +1,4 @@
-package gomavlib
+package mavlinkheartbeat
 
 import (
 //	"github.com/TIBCOSoftware/flogo-lib/core/action"

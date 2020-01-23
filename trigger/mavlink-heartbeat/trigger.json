@@ -1,5 +1,5 @@
 {
-  "name": "mavlink-heartbeat",
+  "name": "mavlinkheartbeat",
   "version": "0.0.1",
   "type": "flogo:trigger",
   "ref": "github.com/wkarasz/flogo-mavlink/trigger/mavlink-heartbeat",

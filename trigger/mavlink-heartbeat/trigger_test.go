@@ -1,4 +1,4 @@
-package gomavlib
+package mavlinkheartbeat
 
 import (
 	"io/ioutil"
