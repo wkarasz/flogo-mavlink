@@ -4,9 +4,9 @@ import (
 //	"github.com/TIBCOSoftware/flogo-lib/core/action"
 	"github.com/TIBCOSoftware/flogo-lib/core/trigger"
 
-//	"context"
+	"context"
 //	"strconv"
-	"time"
+//	"time"
 	"github.com/TIBCOSoftware/flogo-lib/logger"
 	"github.com/carlescere/scheduler"
 	"fmt"
@@ -17,25 +17,6 @@ import (
 
 // Create a new logger
 var log = logger.GetLogger("trigger-mavlink-heartbeat")
-
-const (
-	// constant for ip-based endpoints
-	_NET_BUFFER_SIZE      = 512 // frames cannot go beyond len(header) + 255 + len(check) + len(sig)
-	_NET_CONNECT_TIMEOUT  = 10 * time.Second
-	_NET_RECONNECT_PERIOD = 2 * time.Second
-	_NET_READ_TIMEOUT     = 60 * time.Second
-	_NET_WRITE_TIMEOUT    = 10 * time.Second
-)
-
-// Version allows to set the frame version used to wrap outgoing messages.
-type Version int
-
-const (
-	// V2 wrap outgoing messages in v2 frames.
-	V2 Version = iota
-	// V1 wrap outgoing messages in v1 frames.
-	V1
-)
 
 
 // MyTriggerFactory My Trigger factory
@@ -58,7 +39,7 @@ type MyTrigger struct {
 	metadata *trigger.Metadata
 	config   *trigger.Config
 	timers   []*scheduler.Job
-//	handlers []*trigger.Handler
+	handlers []*trigger.Handler
 	conf     *gomavlib.NodeConf
 	n        *gomavlib.Node
 }
@@ -75,6 +56,8 @@ func (t *MyTrigger) Initialize(ctx trigger.InitContext) error {
 	}
 
 	port := t.config.GetSetting("port")
+
+	t.handlers = ctx.GetHandlers()
 
 	t.conf = &gomavlib.NodeConf{
 		Endpoints: []gomavlib.EndpointConf{
@@ -101,6 +84,28 @@ func (t *MyTrigger) Start() error {
 	if err != nil {
 		panic(err)
 	}
+
+	for evt := range t.n.Events() {
+		if frm, ok := evt.(*gomavlib.EventFrame); ok {
+			fmt.Printf("received: id=%d, %+v\n", frm.Message().GetId(), frm.Message())
+		
+
+			trgData := make(map[string]interface{})
+			//trgData["SystemId"] = frm.SystemId()
+			//trgData["ComponentId"] = frm.ComponentId()
+			trgData["MessageId"] = frm.Message().GetId()
+			trgData["Message"] = frm.Message()
+
+			for _, handler := range t.handlers {
+				results, err := handler.Handle(context.Background(), trgData)
+				if err != nil {
+					panic(err)
+				}
+				log.Debug(results)
+			}
+		}
+	}
+
 	
 	return nil
 }

@@ -1,9 +1,9 @@
 {
-  "name": "mavlinkheartbeat",
+  "name": "mavlink-datastream",
   "version": "0.0.1",
   "type": "flogo:trigger",
-  "ref": "github.com/wkarasz/flogo-mavlink/trigger/mavlink-heartbeat",
-  "description": "Receive mavlink heartbeats",
+  "ref": "github.com/wkarasz/flogo-mavlink/trigger/mavlinkdatastream",
+  "description": "Receive mavlink data stream",
   "author": "William Karasz <wkarasz@tibco.com>",
   "settings":[
     {
@@ -14,27 +14,19 @@
   ],
   "output": [
     {
-      "name": "MAV_TYPE",
+      "name": "SystemId",
       "type": "string"
     },
     {
-      "name": "MAV_AUTOPILOT",
+      "name": "ComponentId",
       "type": "string"
     },
     {
-      "name": "MAV_MODE_FLAG",
+      "name": "MessageId",
       "type": "string"
     },
     {
-      "name": "custom_mode",
-      "type": "string"
-    },
-    {
-      "name": "MAV_STATE",
-      "type": "string"
-    },
-    {
-      "name": "mavlink_version",
+      "name": "Message",
       "type": "string"
     }
   ],
