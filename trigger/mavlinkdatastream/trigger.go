@@ -1,4 +1,4 @@
-package mavlinkheartbeat
+package mavlinkdatastream
 
 import (
 //	"github.com/TIBCOSoftware/flogo-lib/core/action"
@@ -16,7 +16,7 @@ import (
 )
 
 // Create a new logger
-var log = logger.GetLogger("trigger-mavlink-heartbeat")
+var log = logger.GetLogger("trigger-mavlink-datastream")
 
 
 // MyTriggerFactory My Trigger factory

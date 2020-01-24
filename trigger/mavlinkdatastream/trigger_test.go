@@ -1,4 +1,4 @@
-package mavlinkheartbeat
+package mavlinkdatastream
 
 import (
 	"io/ioutil"
