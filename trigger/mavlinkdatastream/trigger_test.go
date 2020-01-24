@@ -17,7 +17,7 @@ func getJsonMetadata() string {
 }
 
 const testConfig string = `{
-  "id": "flogo-mavlink-heartbeart",
+  "id": "flogo-mavlink-datastream",
   "ref": "github.com/wkarasz/flogo-mavlink/trigger/mavlinkdatastream",
   "settings": {
     "port": "14550"
