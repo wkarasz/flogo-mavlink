@@ -54,14 +54,14 @@ func (*mavlinkFactory) NewManager(settings map[string]interface{}) (connection.M
 
 	// Create new shared connection
 	port := sharedConn.config.Port
-	node, err = gomavlib.NewNode(gomavlib.NodeConf{
+	node, err1 := gomavlib.NewNode(gomavlib.NodeConf{
 		Endpoints: []gomavlib.EndpointConf{
 			gomavlib.EndpointUdpServer{"0.0.0.0:"+port},
 		},
 		Dialect:	ardupilotmega.Dialect,
 		OutSystemId: 	10,
 	})
-	if err != nil {
+	if err1 != nil {
 		return nil, err
 	}
 	ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
