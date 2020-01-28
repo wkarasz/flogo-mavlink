@@ -2,7 +2,6 @@ package mavlinkconnection
 
 import (
 	"context"
-	"strings"
 	"time"
 
 	"github.com/project-flogo/core/data/coerce"
@@ -38,7 +37,7 @@ func (*mavlinkFactory) Type() string {
 	return "mavlink"
 }
 
-func (*Factory) NewManager(settings map[string]interface{}) (connection.Manager, error) {
+func (*mavlinkFactory) NewManager(settings map[string]interface{}) (connection.Manager, error) {
 	sharedConn := &MavlinkSharedConfigManager{}
 	var err error
 
