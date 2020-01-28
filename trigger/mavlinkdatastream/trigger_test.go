@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"testing"
-
+	
 	_ "github.com/wkarasz/flogo-mavlink/connection"
 	//"github.com/project-flogo/core/trigger"
 	//"github.com/project-flogo/core/data/mapper"
@@ -18,7 +18,7 @@ import (
 //var triggerMetadata *trigger.Metadata
 var jsonTestMetadata = getTestJsonMetadata()
 
-var settingsjson = `{
+const settingsjson = `{
 	"settings": {
 		"connection": {
 			"name": "myConn",
@@ -27,7 +27,7 @@ var settingsjson = `{
 			"settings": {
 				"name": "myConn",
 				"description": "Local Mavlink Connection",
-				"port": "14550",
+				"port": "14550"
 			}
 		}
 	}
@@ -41,30 +41,22 @@ func getTestJsonMetadata() string {
 	return string(jsonMetadataBytes)
 }
 
-/*
-func getTriggerMetadata() *trigger.Metadata {
-
-	if triggerMetadata == nil {
-		jsonMetadataBytes, err := ioutil.ReadFile("trigger.json")
-		if err != nil {
-			panic("No Json Metadata found for trigger.json path")
-		}
-
-		triggerMetadata = trigger.ToMetadata(string(jsonMetadataBytes))
-	}
-
-	return triggerMetadata
-}
-*/
-
 func TestCreate(t *testing.T) {
 	// New factory
 	log.RootLogger().Info("***TEST : Executing Zero start***")
 	m := make(map[string]interface{})
 	err1 := json.Unmarshal([]byte(settingsjson), &m)
-
+	
 	log.RootLogger().Infof("Input Settings are : %v", m["settings"])
 	assert.Nil(t, err1)
+
+	//mf := mapper.NewFactory(resolve.GetBasicResolver())
+
+	//support.RegisterAlias("connection", "connection", "github.com/wkarasz/flogo-mavlink/connection")
+
+	//iCtx := test.NewActivityInitContext(m["settings"],mf)
+	//act, err := New(iCtx)
+	//assert.Nil(t, err)
 }
 
 /*
