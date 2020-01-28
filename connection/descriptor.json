@@ -2,6 +2,7 @@
 	"name": "mavlink-connector",
 	"title": "Mavlink Connector",
 	"author": "William Karasz",
+	"ref": "github.com/wkarasz/flogo-mavlink/connection",
 	"type": "flogo:connector",
 	"version": "0.1.0",
 	"settings": [
