@@ -92,7 +92,7 @@ func (k *MavlinkSharedConfigManager) Type() string {
 
 // GetConnection ss
 func (k *MavlinkSharedConfigManager) GetConnection() interface{} {
-	return k.mclient
+	return k.node
 }
 
 // ReleaseConnection ss
