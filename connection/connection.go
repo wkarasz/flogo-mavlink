@@ -64,11 +64,14 @@ func (*mavlinkFactory) NewManager(settings map[string]interface{}) (connection.M
 	if err1 != nil {
 		return nil, err
 	}
+	sharedConn.node = node
+	
+	/*
 	ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
 	defer cancel()
 	
 	// do a test here to validate shared connection is valid?
-	/*
+	
 	err = client.Connect(ctx)
 	if err != nil {
 		logmavlinkconn.Errorf("===connect error==", err)
