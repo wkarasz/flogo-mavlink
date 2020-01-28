@@ -1,0 +1,24 @@
+{
+	"name": "mavlink-connector",
+	"title": "Mavlink Connector",
+	"author": "William Karasz",
+	"type": "flogo:connector",
+	"version": "0.1.0",
+	"settings": [
+		{
+			"name": "name",
+			"type": "string",
+			"required": true
+		},
+		{
+			"name": "description",
+			"type": "string"
+		},
+		{
+			"name": "port",
+			"type": "string",
+			"required": true,
+			"value": "14550"
+		}
+	]
+}
