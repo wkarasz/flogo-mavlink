@@ -1,8 +1,8 @@
 package mavlinkconnection
 
 import (
-	"context"
-	"time"
+	//"context"
+	//"time"
 
 	"github.com/project-flogo/core/data/coerce"
 	"github.com/project-flogo/core/data/metadata"
