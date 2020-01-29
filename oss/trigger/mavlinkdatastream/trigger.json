@@ -1,0 +1,37 @@
+{
+  "name": "mavlink-datastream",
+  "title": "Mavlink Trigger",
+  "version": "0.0.2",
+  "type": "flogo:trigger",
+  "description": "Receive mavlink data stream",
+  "author": "William Karasz <wkarasz@tibco.com>",
+  "settings":[
+    {
+      "name": "connection",
+      "type": "connection",
+      "required": true
+    }
+  ],
+  "output": [
+    {
+      "name": "SystemId",
+      "type": "string"
+    },
+    {
+      "name": "ComponentId",
+      "type": "string"
+    },
+    {
+      "name": "MessageId",
+      "type": "string"
+    },
+    {
+      "name": "Message",
+      "type": "string"
+    }
+  ],
+  "handler": {
+    "settings": [
+    ]
+  }
+}
