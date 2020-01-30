@@ -6,7 +6,7 @@ import (
 	"github.com/project-flogo/core/data/metadata"
 	"github.com/project-flogo/core/data/coerce"
 
-	//"context"
+	"context"
         
 	"github.com/wkarasz/gomavlib"
 	"github.com/wkarasz/gomavlib/dialects/ardupilotmega"
