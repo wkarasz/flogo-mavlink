@@ -3,7 +3,7 @@
   "title": "Mavlink Trigger",
   "version": "0.0.2",
   "type": "flogo:trigger",
-  "ref": "github.com/wkarasz/flogo-mavlink/fe/trigger/mavlinkdatastream",
+  "ref": "github.com/wkarasz/flogo-mavlink/Mavlink/trigger/mavlinkdatastream",
   "description": "Receive mavlink data stream",
   "author": "William Karasz <wkarasz@tibco.com>",
     "display": {
