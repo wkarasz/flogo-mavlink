@@ -1,0 +1,42 @@
+{
+  "name": "SET_MODE",
+  "version": "0.0.2",
+  "type": "flogo:activity",
+  "description": "Set mav mode - arm/disarm",
+  "title": "MAV ARM - Set Mode",
+  "author": "William Karasz",
+  "settings":[
+    {
+      "name": "connection",
+      "type": "connection",
+      "required": true
+    }
+  ],
+  "input": [
+    { 
+      "name": "SET_MODE",
+      "type": "string",
+      "required": true,
+      "allowed": [
+        "MAV_MODE_PREFLIGHT",
+        "MAV_MODE_STABILIZE_DISARMED",
+        "MAV_MODE_STABILIZE_ARMED",
+        "MAV_MODE_MANUAL_DISARMED",
+        "MAV_MODE_MANUAL_ARMED",
+        "MAV_MODE_GUIDED_DISARMED",
+        "MAV_MODE_GUIDED_ARMED",
+        "MAV_MODE_AUTO_DISARMED",
+        "MAV_MODE_AUTO_ARMED",
+        "MAV_MODE_TEST_DISARMED",
+        "MAV_MODE_TEST_ARMED"
+      ],
+      "value": "MAV_MODE_MANUAL_ARMED"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "type": "string"
+    }
+  ]
+}

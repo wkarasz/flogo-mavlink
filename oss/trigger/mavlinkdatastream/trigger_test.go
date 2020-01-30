@@ -23,7 +23,7 @@ const settingsjson = `{
 		"connection": {
 			"name": "myConn",
 			"description": "Local Mavlink Connection",
-			"ref": "github.com/wkarasz/flogo-mavlink/connection",
+			"ref": "github.com/wkarasz/flogo-mavlink/oss/connection",
 			"settings": {
 				"name": "myConn",
 				"description": "Local Mavlink Connection",
