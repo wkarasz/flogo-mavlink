@@ -16,12 +16,25 @@ type HandlerSettings struct {
 
 //Input structure
 type Input struct {
-	Data interface{} `md:"data,required"` // The JSON Object that will serve as the input data
+	Data interface{} `md:"SET_MODE,required"` // The JSON Object that will serve as the input data
 }
 
 // Output structure
 type Output struct {
 	Output map[string]interface{} `md:"output"` //The Output of the trigger
+}
+
+//FromMap method
+func (i *Input) FromMap(values map[string]interface{}) error {
+	i.Data, _ = values["SET_MODE"]
+	return nil
+}
+
+//ToMap method
+func (i *Input) ToMap() map[string]interface{} {
+	return map[string]interface{}{
+		"SET_MODE": i.Data,
+	}
 }
 
 // ToMap method for Output
