@@ -13,7 +13,7 @@ import (
 )
 
 var logSetMode = log.ChildLogger(log.RootLogger(), "mavlink-setmode")
-var activityMd = activity.ToMetadata(&Input{}, &Output{})
+var activityMd = activity.ToMetadata(&Input{}, &Output{}, &Settings{})
 
 func init() {
 	err := activity.Register(&Activity{}, New)
