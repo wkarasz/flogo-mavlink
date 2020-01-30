@@ -6,11 +6,11 @@ import (
 	"encoding/json"
 
 	"github.com/project-flogo/core/activity"
-	//"github.com/project-flogo/core/data/mapper"
-	//"github.com/project-flogo/core/data/resolve"
-	//"github.com/project-flogo/core/support"
+	"github.com/project-flogo/core/data/mapper"
+	"github.com/project-flogo/core/data/resolve"
+	"github.com/project-flogo/core/support"
 	"github.com/project-flogo/core/support/log"
-	//"github.com/project-flogo/core/support/test"
+	"github.com/project-flogo/core/support/test"
 	_ "github.com/wkarasz/flogo-mavlink/oss/connection"
 	"github.com/stretchr/testify/assert"
 )
@@ -53,7 +53,6 @@ func getActivityMetadata() *activity.Metadata {
 			panic("No Json Metadata found for activity.json path")
 		}
 
-		//activityMetadata = activity.NewMetadata(string(jsonMetadataBytes))
 		activityMetadata = activity.ToMetadata(string(jsonMetadataBytes))
 	}
 
@@ -71,6 +70,18 @@ func TestCreate(t *testing.T) {
 
 	assert.Nil(t, err)
 
+	mf := mapper.NewFactory(resolve.GetBasicResolver())
+	support.RegisterAlias("connection", "connection", "github.com/wkarasz/flogo-mavlink/oss/connection")
+	log.RootLogger().Infof("====Settings=====\n%s", m["settings"])
+	iCtx := test.NewActivityInitContext(m["settings"], mf)
+	act, err1 := New(iCtx)
+	assert.Nil(t, err1)
+
+	tc := test.NewActivityContext(act.Metadata())
+	// Setting inputs
+	tc.SetInput("SET_MODE","MAV_MODE_PREFLIGHT")
+	_, err = act.Eval(tc)
+	
 	//act := NewActivity(getActivityMetadata())
 
 	//if act == nil {

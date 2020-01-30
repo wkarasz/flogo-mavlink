@@ -6,7 +6,7 @@ import (
 	"github.com/project-flogo/core/data/metadata"
 	"github.com/project-flogo/core/data/coerce"
 
-	"context"
+	//"context"
         
 	"github.com/wkarasz/gomavlib"
 	"github.com/wkarasz/gomavlib/dialects/ardupilotmega"
@@ -30,7 +30,7 @@ func New(ctx activity.InitContext) (activity.Activity, error) {
 		return nil, err
 	}
 	if settings.Connection != "" {
-		log.RootLogger().Infof("Connection [%s]",settings.Connection)
+		log.RootLogger().Infof("***Connection [%s]***",settings.Connection)
 		mConn, toConnerr := coerce.ToConnection(settings.Connection)
 		if toConnerr != nil {
 			return nil, toConnerr
@@ -68,7 +68,8 @@ func (a *Activity) Eval(context activity.Context) (done bool, err error)  {
 	// do eval
 	cmd := context.GetInput("SET_MODE").(string)
 	logSetMode.Debugf("Set Mode [%s]", cmd)
-	
+	log.RootLogger().Infof("Set mode [%s]", cmd)
+		
 	n := *a.n
 
         switch cmd {
