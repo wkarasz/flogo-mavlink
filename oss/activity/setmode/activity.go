@@ -30,6 +30,7 @@ func New(ctx activity.InitContext) (activity.Activity, error) {
 		return nil, err
 	}
 	if settings.Connection != "" {
+		logSetMode.Infof("Connection [%s]",settings.Connection)
 		mConn, toConnerr := coerce.ToConnection(settings.Connection)
 		if toConnerr != nil {
 			return nil, toConnerr
