@@ -2,13 +2,14 @@ package mavlinksetmode
 
 import (
 	"github.com/project-flogo/core/activity"
-	"github.com/project-flogo/core/support/logger"
+	"github.com/project-flogo/core/support/log"
 	"github.com/project-flogo/core/data/metadata"
 	"github.com/project-flogo/core/data/coerce"
 
-	"context"
+	//"context"
         
 	"github.com/wkarasz/gomavlib"
+	"github.com/wkarasz/gomavlib/dialects/ardupilotmega"
 )
 
 var logSetMode = log.ChildLogger(log.RootLogger(), "mavlink-setmode")
@@ -66,71 +67,68 @@ func (a *Activity) Eval(context activity.Context) (done bool, err error)  {
 	// do eval
 	cmd := context.GetInput("SET_MODE").(string)
 	logSetMode.Debugf("Set Mode [%s]", cmd)
+	
+	n := *a.n
 
-        switch cmd; cmd {
+        switch cmd {
 		case "MAV_MODE_PREFLIGHT":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-				TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+				TargetSystem: 0,
                 		BaseMode: ardupilotmega.MAV_MODE_PREFLIGHT,
 			})
 		case "MAV_MODE_STABILIZE_DISARMED":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-                                TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+                                TargetSystem: 0,
                                 BaseMode: ardupilotmega.MAV_MODE_STABILIZE_DISARMED,
                         })
         	case "MAV_MODE_STABILIZE_ARMED":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-                                TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+                                TargetSystem: 0,
                                 BaseMode: ardupilotmega.MAV_MODE_STABILIZE_ARMED,
                         })
 		case "MAV_MODE_MANUAL_DISARMED":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-                                TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+                                TargetSystem: 0,
                                 BaseMode: ardupilotmega.MAV_MODE_MANUAL_DISARMED,
                         })
 		case "MAV_MODE_MANUAL_ARMED":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-                                TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+                                TargetSystem: 0,
                                 BaseMode: ardupilotmega.MAV_MODE_MANUAL_ARMED,
                         })
 		case "MAV_MODE_GUIDED_DISARMED":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-                                TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+                                TargetSystem: 0,
                                 BaseMode: ardupilotmega.MAV_MODE_GUIDED_DISARMED,
                         })
 		case "MAV_MODE_GUIDED_ARMED":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-                                TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+                                TargetSystem: 0,
                                 BaseMode: ardupilotmega.MAV_MODE_GUIDED_ARMED,
                         })
 		case "MAV_MODE_AUTO_DISARMED":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-                                TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+                                TargetSystem: 0,
                                 BaseMode: ardupilotmega.MAV_MODE_AUTO_DISARMED,
                         })
 		case "MAV_MODE_AUTO_ARMED":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-                                TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+                                TargetSystem: 0,
                                 BaseMode: ardupilotmega.MAV_MODE_AUTO_ARMED,
                         })
 		case "MAV_MODE_TEST_DISARMED":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-                                TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+                                TargetSystem: 0,
                                 BaseMode: ardupilotmega.MAV_MODE_TEST_DISARMED,
                         })
 		case "MAV_MODE_TEST_ARMED":
-			node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-                                TargetId: 0,
+			n.WriteMessageAll(&ardupilotmega.MessageSetMode{
+                                TargetSystem: 0,
                                 BaseMode: ardupilotmega.MAV_MODE_TEST_ARMED,
                         })
 		default:
 			logSetMode.Errorf("Unknown mode [%s]",cmd)
 			return
 	}
-	node.WriteMessageAll(&ardupilotmega.MessageSetMode{
-		TargetId: 0,
-		BaseMode: ardupilotmega.MAV_MODE_MANUAL_ARMED,
-	})
-
 	return true, nil
 }

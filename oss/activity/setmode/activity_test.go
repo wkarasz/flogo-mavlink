@@ -6,11 +6,11 @@ import (
 	"encoding/json"
 
 	"github.com/project-flogo/core/activity"
-	"github.com/project-flogo/core/data/mapper"
-	"github.com/project-flogo/core/data/resolve"
-	"github.com/project-flogo/core/support"
+	//"github.com/project-flogo/core/data/mapper"
+	//"github.com/project-flogo/core/data/resolve"
+	//"github.com/project-flogo/core/support"
 	"github.com/project-flogo/core/support/log"
-	"github.com/project-flogo/core/support/test"
+	//"github.com/project-flogo/core/support/test"
 	_ "github.com/wkarasz/flogo-mavlink/oss/connection"
 	"github.com/stretchr/testify/assert"
 )
