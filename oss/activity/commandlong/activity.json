@@ -1,0 +1,57 @@
+{
+  "name": "CommandLong",
+  "version": "0.0.2",
+  "type": "flogo:activity",
+  "description": "MessageCommandLong",
+  "title": "MAV Command Long",
+  "author": "William Karasz",
+  "settings":[
+    {
+      "name": "connection",
+      "type": "connection",
+      "required": true
+    }
+  ],
+  "input": [
+    { 
+      "name": "command",
+      "type": "string",
+      "required": true,
+      "value": "MAV_CMD_NAV_WAYPOINT"
+    },
+    {
+      "name": "param1",
+      "type": "float32"
+    },
+    {
+      "name": "param2",
+      "type": "float32"
+    },
+    {
+      "name": "param3",
+      "type": "float32"
+    },
+    {
+      "name": "param4",
+      "type": "float32"
+    },
+    {
+      "name": "param5",
+      "type": "float32"
+    },
+    {
+      "name": "param6",
+      "type": "float32"
+    },
+    {
+      "name": "param7",
+      "type": "float32"
+    }
+  ],
+  "output": [
+    {
+      "name": "result",
+      "type": "string"
+    }
+  ]
+}
