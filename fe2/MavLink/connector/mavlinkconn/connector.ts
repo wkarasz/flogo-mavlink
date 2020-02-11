@@ -11,7 +11,7 @@ import * as lodash from "lodash";
 
 @Injectable()
 @WiContrib({})
-export class MavlinkConnectorService extends WiServiceHandlerContribution {
+export class MavLinkConnectorService extends WiServiceHandlerContribution {
     constructor( @Inject(Injector) injector, private http: Http) {
         super(injector, http);
     }

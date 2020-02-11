@@ -1,7 +1,7 @@
 import {NgModule} from "@angular/core"
 import {HttpModule} from "@angular/http";
 import {WiServiceContribution} from "wi-studio/app/contrib/wi-contrib"
-import {MavlinkConnectorService} from "./connector"
+import {MavLinkConnectorService} from "./connector/mavlinkconn"
 
 @NgModule({
     imports: [
@@ -10,10 +10,10 @@ import {MavlinkConnectorService} from "./connector"
     providers: [
         {
             provide: WiServiceContribution,
-            useClass: MavlinkConnectorService
+            useClass: MavLinkConnectorService
         }
     ]
 })
-export default class MavlinkConnectorModule {
+export default class MavLinkConnectorModule {
 
 }
