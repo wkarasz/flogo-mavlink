@@ -9,7 +9,7 @@
     "smallIcon": "mavlink.png",
     "description": "Set mav mode - arm/disarm"
   },
-  "ref": "MavLink/activity/mavlinksetmode",
+  "ref": "github.com/wkarasz/flogo-mavlink/fe2/MavLink/activity/mavlinksetmode",
   "author": "William Karasz",
   "settings":[
     {
