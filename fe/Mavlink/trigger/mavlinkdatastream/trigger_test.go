@@ -1,11 +1,11 @@
-package mavlinkdatastream
+package mavlinktrigger
 
 import (
 	"encoding/json"
 	"io/ioutil"
 	"testing"
 	
-	_ "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlinkconn"
+	_ "github.com/wkarasz/flogo-mavlink/fe/connection"
 	//"github.com/project-flogo/core/trigger"
 	//"github.com/project-flogo/core/data/mapper"
 	//"github.com/project-flogo/core/data/resolve"
