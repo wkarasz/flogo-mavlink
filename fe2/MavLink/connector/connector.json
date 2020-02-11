@@ -10,7 +10,7 @@
 		"visible": true,
 		"smallIcon": "mavlink.png"
 	},
-	"ref": "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlinkconn",
+	"ref": "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector",
 	"keyfield": "name",
 	"settings": [
 		{
