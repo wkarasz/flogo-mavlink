@@ -1,0 +1,48 @@
+{
+	"name": "mavlinkconn",
+	"title": "Mavlink Connector",
+	"author": "William Karasz",
+	"type": "flogo:connector",
+	"version": "0.1.0",
+	"display": {
+		"description": "MavLink Connector",
+		"category": "MavLink",
+		"visible": true,
+		"smallIcon": "mavlink.png"
+	},
+	"ref": "MavLink/connector/mavlinkconn",
+	"settings": [
+		{
+			"name": "name",
+			"type": "string",
+			"required": true,
+			"display": {
+				"name": "Connection Name",
+				"description": "Name of the connection"
+			}
+		},
+		{
+			"name": "description",
+			"type": "string",
+			"display": {
+				"name": "Description",
+				"description": "Connection description"
+			}
+		},
+		{
+			"name": "port",
+			"type": "string",
+			"required": true,
+			"value": "14550",
+			"display": {
+				"name": "Port",
+				"description": "Port to set up UDP Server"
+			}
+		}
+	],
+	"actions": [
+	 	{
+			"name": "Save"
+		}
+	]
+}
