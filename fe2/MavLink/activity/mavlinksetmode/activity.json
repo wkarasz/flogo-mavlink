@@ -11,7 +11,7 @@
   },
   "ref": "github.com/wkarasz/flogo-mavlink/fe2/MavLink/activity/mavlinksetmode",
   "author": "William Karasz",
-  "settings":[
+  "inputs": [
     {
       "name": "mavlinkconnection",
       "type": "object",
@@ -22,9 +22,7 @@
         "type": "connection"
       },
       "allowed": []
-    }
-  ],
-  "inputs": [
+    },
     { 
       "name": "SET_MODE",
       "type": "string",
