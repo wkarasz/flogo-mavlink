@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"testing"
 	
-	_ "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlink"
+	_ "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector"
 	//"github.com/project-flogo/core/trigger"
 	//"github.com/project-flogo/core/data/mapper"
 	//"github.com/project-flogo/core/data/resolve"
