@@ -11,6 +11,7 @@
 		"smallIcon": "mavlink.png"
 	},
 	"ref": "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlinkconn",
+	"keyfield": "name",
 	"settings": [
 		{
 			"name": "name",
