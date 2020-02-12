@@ -11,7 +11,7 @@ import (
 	"github.com/project-flogo/core/support"
 	"github.com/project-flogo/core/support/log"
 	"github.com/project-flogo/core/support/test"
-	_ "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlinkconn"
+	_ "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlink"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -22,7 +22,6 @@ const settingsjson = `{
 		"connection": {
 			"name": "myConn",
 			"description": "Local Mavlink Connection",
-			"ref": "github.com/wkarasz/flogo-mavlink/oss/connection",
 			"settings": {
 				"name": "myConn",
 				"description": "Local Mavlink Connection",
@@ -71,7 +70,7 @@ func TestCreate(t *testing.T) {
 	assert.Nil(t, err)
 
 	mf := mapper.NewFactory(resolve.GetBasicResolver())
-	support.RegisterAlias("connection", "connection", "github.com/wkarasz/flogo-mavlink/oss/connection")
+	support.RegisterAlias("connection", "connection", "MavLink/connector/mavlink")
 	log.RootLogger().Infof("====Settings=====\n%s", m["settings"])
 	iCtx := test.NewActivityInitContext(m["settings"], mf)
 	act, err1 := New(iCtx)

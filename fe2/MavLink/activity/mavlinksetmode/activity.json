@@ -9,7 +9,7 @@
     "smallIcon": "mavlink.png",
     "description": "Set mav mode - arm/disarm"
   },
-  "ref": "github.com/wkarasz/flogo-mavlink/fe2/MavLink/activity/mavlinksetmode",
+  "ref": "MavLink/activity/mavlinksetmode",
   "author": "William Karasz",
   "inputs": [
     {
@@ -19,7 +19,8 @@
       "display": {
         "name": "MavLink Connection",
         "description": "Select your MavLink Connection",
-        "type": "connection"
+        "type": "connection",
+	"selection": "single"
       },
       "allowed": []
     },

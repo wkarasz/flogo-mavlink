@@ -1,4 +1,4 @@
-package mavlinkconn
+package mavlink
 
 import (
 	//"context"

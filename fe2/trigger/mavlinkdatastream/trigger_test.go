@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"testing"
 	
-	_ "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector"
+	_ "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlink"
 	//"github.com/project-flogo/core/trigger"
 	//"github.com/project-flogo/core/data/mapper"
 	//"github.com/project-flogo/core/data/resolve"
@@ -23,7 +23,6 @@ const settingsjson = `{
 		"connection": {
 			"name": "myConn",
 			"description": "Local Mavlink Connection",
-			"ref": "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlink",
 			"settings": {
 				"name": "myConn",
 				"description": "Local Mavlink Connection",
