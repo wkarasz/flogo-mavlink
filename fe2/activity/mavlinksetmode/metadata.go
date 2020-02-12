@@ -16,6 +16,7 @@ type HandlerSettings struct {
 
 //Input structure
 type Input struct {
+	Connection interface{} `md:"connection,required"`
 	Data interface{} `md:"SET_MODE,required"` // The JSON Object that will serve as the input data
 }
 
@@ -26,6 +27,7 @@ type Output struct {
 
 //FromMap method
 func (i *Input) FromMap(values map[string]interface{}) error {
+	i.Connection, _ = values["connection"]
 	i.Data, _ = values["SET_MODE"]
 	return nil
 }
@@ -33,6 +35,7 @@ func (i *Input) FromMap(values map[string]interface{}) error {
 //ToMap method
 func (i *Input) ToMap() map[string]interface{} {
 	return map[string]interface{}{
+		"connection": i.Connection,
 		"SET_MODE": i.Data,
 	}
 }

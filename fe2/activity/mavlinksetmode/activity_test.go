@@ -70,7 +70,7 @@ func TestCreate(t *testing.T) {
 	assert.Nil(t, err)
 
 	mf := mapper.NewFactory(resolve.GetBasicResolver())
-	support.RegisterAlias("connection", "connection", "MavLink/connector/mavlink")
+	support.RegisterAlias("connection", "connection", "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlink")
 	log.RootLogger().Infof("====Settings=====\n%s", m["settings"])
 	iCtx := test.NewActivityInitContext(m["settings"], mf)
 	act, err1 := New(iCtx)
