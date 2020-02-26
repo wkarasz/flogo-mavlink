@@ -7,10 +7,10 @@ import (
 	
 	_ "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlink"
 	//"github.com/project-flogo/core/trigger"
+	"github.com/project-flogo/core/support"
+	"github.com/project-flogo/core/support/log"
 	//"github.com/project-flogo/core/data/mapper"
 	//"github.com/project-flogo/core/data/resolve"
-	//"github.com/project-flogo/core/support"
-	"github.com/project-flogo/core/support/log"
 	//"github.com/project-flogo/core/support/test"
 	"github.com/stretchr/testify/assert"
 )
@@ -52,6 +52,7 @@ func TestCreate(t *testing.T) {
 	//mf := mapper.NewFactory(resolve.GetBasicResolver())
 
 	//support.RegisterAlias("connection", "connection", "github.com/wkarasz/flogo-mavlink/fe/connection")
+	support.RegisterAlias("connection", "connection", "MavLink/connector/mavlink")
 
 	//iCtx := test.NewActivityInitContext(m["settings"],mf)
 	//act, err := New(iCtx)

@@ -17,15 +17,15 @@ import (
 //	"github.com/wkarasz/gomavlib/dialects/ardupilotmega"
 )
 
+func init() {
+	_ = trigger.Register(&Trigger{}, &TriggerFactory{})
+}
+
 // Create a new logger
 //var log = logger.GetLogger("trigger-mavlink-datastream")
 
 // Create a new metadata
 var triggerMd = trigger.NewMetadata(&Settings{}, &HandlerSettings{}, &Output{})
-
-func init() {
-	_ = trigger.Register(&Trigger{}, &TriggerFactory{})
-}
 
 // TriggerFactory My Trigger factory
 type TriggerFactory struct{

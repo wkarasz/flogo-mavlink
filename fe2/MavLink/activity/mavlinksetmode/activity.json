@@ -14,13 +14,7 @@
   "settings": [
     {
       "name": "connection",
-      "type": "connection"
-    }
-  ],
-  "inputs": [
-    {
-      "name": "mavlinkconnection",
-      "type": "object",
+      "type": "connection",
       "required": true,
       "display": {
         "name": "MavLink Connection",
@@ -29,7 +23,9 @@
 	"selection": "single"
       },
       "allowed": []
-    },
+    }
+  ],
+  "inputs": [
     { 
       "name": "SET_MODE",
       "type": "string",

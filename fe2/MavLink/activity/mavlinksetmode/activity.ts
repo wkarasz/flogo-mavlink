@@ -34,7 +34,7 @@ export class MavLinkActivityContribution extends WiServiceHandlerContribution {
          * are created as an MavLinkConnector (the connector category as specified in the 
          * connector.json must match what we specify here)
          */
-        if (fieldName === "mavlinkconnection") {
+        if (fieldName === "connection") {
             return Observable.create(observer => {
                 let connectionRefs = [];
                 /**
@@ -70,8 +70,8 @@ export class MavLinkActivityContribution extends WiServiceHandlerContribution {
          * For the field mavlinkconnection check that the connection has been set, otherwise
          * display the errormessage
          */
-        if (fieldName === "mavlinkconnection") {
-            let connection: IFieldDefinition = context.getField("mavlinkconnection")
+        if (fieldName === "connection") {
+            let connection: IFieldDefinition = context.getField("connection")
             if (connection.value === null) {
                 return ValidationResult.newValidationResult().setError("MavLink-1000", "MavLink Connection must be configured");
             }

@@ -1,5 +1,5 @@
 {
-	"name": "mavlinkconn",
+	"name": "mavlink",
 	"title": "Mavlink Connector",
 	"author": "William Karasz",
 	"type": "flogo:connector",
@@ -8,7 +8,8 @@
 		"description": "MavLink Connector",
 		"category": "MavLink",
 		"visible": true,
-		"smallIcon": "mavlink.png"
+		"smallIcon": "mavlink.png",
+		"connectionsupport": true
 	},
 	"ref": "MavLink/connector/mavlink",
 	"keyfield": "name",
