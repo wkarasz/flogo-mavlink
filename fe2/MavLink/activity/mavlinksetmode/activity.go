@@ -7,6 +7,7 @@ import (
 	"github.com/project-flogo/core/data/coerce"
 
 	//"context"
+	"fmt"
         
 	"github.com/wkarasz/gomavlib"
 	"github.com/wkarasz/gomavlib/dialects/ardupilotmega"
@@ -131,6 +132,17 @@ func (a *Activity) Eval(context activity.Context) (done bool, err error)  {
 		default:
 			logSetMode.Errorf("Unknown mode [%s]",cmd)
 			return
+	}
+
+	//Set result in the output
+	//actData := make(map[string]interface{})
+	//actData["result"] = "Operation Executed"
+	//output := &Output{}
+	//output.Result = "Operate executed"
+	//err = context.SetOutputObject(output)
+	err = context.SetOutput("result","Operation Executed")
+	if err != nil {
+		return false, fmt.Errorf("error setting output for Activity [%s]: %s", context.Name(), err.Error())
 	}
 	return true, nil
 }

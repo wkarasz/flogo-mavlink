@@ -20,11 +20,6 @@ type Input struct {
 	Data interface{} `md:"SET_MODE,required"` // The JSON Object that will serve as the input data
 }
 
-// Output structure
-type Output struct {
-	Output map[string]interface{} `md:"output"` //The Output of the trigger
-}
-
 //FromMap method
 func (i *Input) FromMap(values map[string]interface{}) error {
 	i.Connection, _ = values["connection"]
@@ -40,10 +35,16 @@ func (i *Input) ToMap() map[string]interface{} {
 	}
 }
 
+// Output structure
+type Output struct {
+	//Output map[string]interface{} `md:"output"` //The Output of the trigger
+	Result	string `md:"result"`
+}
+
 // ToMap method for Output
 func (o *Output) ToMap() map[string]interface{} {
 	return map[string]interface{}{
-		"output": o.Output,
+		"result": o.Result,
 	}
 }
 
@@ -52,7 +53,7 @@ func (o *Output) FromMap(values map[string]interface{}) error {
 
 	var err error
 
-	o.Output, err = coerce.ToObject(values["output"])
+	o.Result, err = coerce.ToString(values["result"])
 	if err != nil {
 		return err
 	}
