@@ -29,7 +29,13 @@
     { 
       "name": "SET_MODE",
       "type": "string",
-      "required": true,
+      "display": {
+        "name":"Mode",
+        "description": "Set the mode of the UAV",
+        "type":"dropdown",
+        "selection":"single",
+	"mappable": true
+      },
       "allowed": [
         "MAV_MODE_PREFLIGHT",
         "MAV_MODE_STABILIZE_DISARMED",

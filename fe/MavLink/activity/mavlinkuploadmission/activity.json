@@ -1,0 +1,41 @@
+{
+  "name": "mavlinkuploadmission",
+  "title": "Upload Mission",
+  "version": "0.0.2",
+  "type": "flogo:activity",
+  "display": {
+    "category": "MavLink",
+    "visible": true,
+    "smallIcon": "mavlink.png",
+    "description": "Mavlink - Set waypoints and upload mission"
+  },
+  "ref": "MavLink/activity/mavlinkuploadmission",
+  "author": "William Karasz",
+  "settings": [
+    {
+      "name": "connection",
+      "type": "connection",
+      "required": true,
+      "display": {
+        "name": "MavLink Connection",
+        "description": "Select your MavLink Connection",
+        "type": "connection",
+        "selection": "single"
+      },
+      "allowed": []
+    }
+  ],
+  "inputs": [
+    { 
+      "name": "MISSION",
+      "type": "string",
+      "required": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "type": "string"
+    }
+  ]
+}
