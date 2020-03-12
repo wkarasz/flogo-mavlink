@@ -17,20 +17,26 @@ https://github.com/wkarasz/flogo-mavlink/fe/MavLink/activity/mavlinksetwaypoints
 Inputs and Outputs:
 ```json
 {
+"settings": [
+    {
+      "name": "connection",
+      "type": "connection",
+      "required": true,
+      "display": {
+        "name": "MavLink Connection",
+        "description": "Select your MavLink Connection",
+        "type": "connection",
+        "selection": "single"
+      },
+      "allowed": []
+    }
+  ],
   "inputs": [
-    "name": "mode",
-    "type": "string",
-    "allowed": [
-        "MAV_MODE_MANUAL_DISARMED",
-        "MAV_MODE_MANUAL_ARMED",
-        "MAV_MODE_GUIDED_DISARMED",
-        "MAV_MODE_GUIDED_ARMED",
-        "MAV_MODE_AUTO_DISARMED",
-        "MAV_MODE_AUTO_ARMED",
-        "MAV_MODE_TEST_DISARMED",
-        "MAV_MODE_TEST_ARMED"
-     ],
-     "value": "MAV_MODE_MANUAL_ARMED"
+    {
+      "name": "MISSION",
+      "type": "string",
+      "required": true
+    }
   ],
   "outputs": [
     {
@@ -43,8 +49,27 @@ Inputs and Outputs:
 ## Inputs
 | Input            | Description    |
 |:-----------------|:---------------|
-| devicePath       | The path to the ELM device on the host system; e.g. /dev/ttyUSB0 |
-| directCmd        | The raw command supported by the ELM chipset; e.g. AT@1<br>https://www.elmelectronics.com/wp-content/uploads/2017/01/AT_Command_Table.pdf|
+| MISSION       | The mission commands and waypoints.  Follows syntax of `[{mission_element},{mission_element},{mission_element}]` where mission_element schema is defined below. |
+
+**mission_element schema**
+```json
+{
+	"Index": 0,
+	"CurrentWP": 1,
+	"CoordFrame": 0,
+	"Command": 16,
+	"Param1": 0,
+	"Param2": 0,
+	"Param3": 0,
+	"Param4": 0,
+	"X": 41.668469,
+	"Y": -72.646413,
+	"Z": 13.439352,
+	"Autocontinue": 1
+}
+```
+e.g. `[{"Index": 0,"CurrentWP": 1,"CoordFrame": 0,"Command": 16,"Param1": 0,"Param2": 0,"Param3": 0,"Param4": 0,"X": 41.668469,"Y": -72.646413,"Z": 13.439352,"Autocontinue": 1},{"Index": 1,"CurrentWP": 0,"CoordFrame": 3,"Command": 22,"Param1": 0.0,"Param2": 0.0,"Param3": 0.0,"Param4": 0.0,"X": 0.0,"Y": 0.0,"Z": 10.0,"Autocontinue": 1},{"Index": 2,"CurrentWP": 0,"CoordFrame": 0,"Command": 16,"Param1": 0.0,"Param2": 0.0,"Param3": 0.0,"Param4": 0.0,"X": 41.66856880,"Y": -72.64635710,"Z": 10.0,"Autocontinue": 1},{"Index": 3,"CurrentWP": 0,"CoordFrame": 0,"Command": 16,"Param1": 0.0,"Param2": 0.0,"Param3": 0.0,"Param4": 0.0,"X": 41.66856880,"Y": -72.64635710,"Z": 10.0,"Autocontinue": 1},{"Index": 4,"CurrentWP": 0,"CoordFrame": 3,"Command": 20,"Param1": 0.0,"Param2": 0.0,"Param3": 0.0,"Param4": 0.0,"X": 0.0,"Y": 0.0,"Z": 0.0,"Autocontinue": 1}]`
+
 
 # Outputs
 | Output           | Description    |

@@ -1,15 +1,15 @@
 {
-  "name": "mavlinksetmode",
-  "title": "Set Mode - MessageSetMode",
+  "name": "mavlinkarm",
+  "title": "Arm-Disarm",
   "version": "0.0.2",
   "type": "flogo:activity",
   "display": {
     "category": "MavLink",
     "visible": true,
     "smallIcon": "mavlink.png",
-    "description": "Set mav mode - arm/disarm"
+    "description": "Arm/disarm component"
   },
-  "ref": "MavLink/activity/mavlinksetmode",
+  "ref": "MavLink/activity/mavlinkarm",
   "author": "William Karasz",
   "settings": [
     {
@@ -27,29 +27,20 @@
   ],
   "inputs": [
     { 
-      "name": "SET_MODE",
+      "name": "COMPONENT_MODE",
       "type": "string",
       "display": {
-        "name":"Mode",
-        "description": "Set the mode of the UAV",
+        "name":"Component Mode",
+        "description": "Set the mode of the component",
         "type":"dropdown",
         "selection":"single",
 	"mappable": true
       },
       "allowed": [
-        "MAV_MODE_PREFLIGHT",
-        "MAV_MODE_STABILIZE_DISARMED",
-        "MAV_MODE_STABILIZE_ARMED",
-        "MAV_MODE_MANUAL_DISARMED",
-        "MAV_MODE_MANUAL_ARMED",
-        "MAV_MODE_GUIDED_DISARMED",
-        "MAV_MODE_GUIDED_ARMED",
-        "MAV_MODE_AUTO_DISARMED",
-        "MAV_MODE_AUTO_ARMED",
-        "MAV_MODE_TEST_DISARMED",
-        "MAV_MODE_TEST_ARMED"
+        "ARM",
+        "DISARM"
       ],
-      "value": "MAV_MODE_MANUAL_ARMED"
+      "value": "ARM"
     }
   ],
   "outputs": [

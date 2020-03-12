@@ -11,7 +11,7 @@ import (
 	"github.com/project-flogo/core/support"
 	"github.com/project-flogo/core/support/log"
 	"github.com/project-flogo/core/support/test"
-	_ "github.com/wkarasz/flogo-mavlink/fe2/MavLink/connector/mavlink"
+	_ "github.com/wkarasz/flogo-mavlink/fe/MavLink/connector/mavlink"
 	"github.com/stretchr/testify/assert"
 )
 

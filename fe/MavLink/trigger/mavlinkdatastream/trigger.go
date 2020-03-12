@@ -127,8 +127,8 @@ func (evntLsnr *EventListener) listen() {
 		
 
 			trgData := make(map[string]interface{})
-			//trgData["SystemId"] = frm.SystemId()
-			//trgData["ComponentId"] = frm.ComponentId()
+			trgData["SystemId"] = frm.SystemId()
+			trgData["ComponentId"] = frm.ComponentId()
 			trgData["MessageId"] = frm.Message().GetId()
 			trgData["Message"] = frm.Message()
 

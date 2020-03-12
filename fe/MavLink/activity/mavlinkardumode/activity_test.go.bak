@@ -1,4 +1,4 @@
-package mavlinkuploadmission
+package mavlinkardumode
 
 import (
 	"io/ioutil"
@@ -17,25 +17,6 @@ import (
 
 var jsonTestMetadata = getTestJsonMetadata()
 
-var waypointsjson = []byte(`
-        [
-                {
-                        "Index": 0,"CurrentWP": 1,"CoordFrame": 0,"Command": 16,"Param1": 0,"Param2": 0,"Param3": 0,"Param4": 0,"X": 40.668469,"Y": -73.646413,"Z": 13.439352,"Autocontinue": 1
-                },
-                {
-                        "Index": 1,"CurrentWP": 0,"CoordFrame": 3,"Command": 22,"Param1": 0.0,"Param2": 0.0,"Param3": 0.0,"Param4": 0.0,"X": 0.0,"Y": 0.0,"Z": 10.0,"Autocontinue": 1
-                },
-                {
-                        "Index": 2,"CurrentWP": 0,"CoordFrame": 0,"Command": 16,"Param1": 0.0,"Param2": 0.0,"Param3": 0.0,"Param4": 0.0,"X": 40.66856880,"Y": -73.64635710,"Z": 10.0,"Autocontinue": 1
-                },
-                {
-                        "Index": 3,"CurrentWP": 0,"CoordFrame": 0,"Command": 16,"Param1": 0.0,"Param2": 0.0,"Param3": 0.0,"Param4": 0.0,"X": 40.66856880,"Y": -73.64635710,"Z": 10.0,"Autocontinue": 1
-                },
-                {
-                        "Index": 4,"CurrentWP": 0,"CoordFrame": 3,"Command": 20,"Param1": 0.0,"Param2": 0.0,"Param3": 0.0,"Param4": 0.0,"X": 0.0,"Y": 0.0,"Z": 0.0,"Autocontinue": 1
-                }
-]`)
-
 const settingsjson = `{
 	"settings": {
 		"connection": {
@@ -49,7 +30,7 @@ const settingsjson = `{
 		}
 	},
 	"input" : {
-		"MISSION": "MAV_MODE_PREFLIGHT"
+		"COMPONENT_MODE": "AUTO"
 	}
 }`
 
@@ -97,7 +78,7 @@ func TestCreate(t *testing.T) {
 
 	tc := test.NewActivityContext(act.Metadata())
 	// Setting inputs
-	tc.SetInput("SET_MODE","MAV_MODE_PREFLIGHT")
+	tc.SetInput("COMPONENT_MODE","ARM")
 	_, err = act.Eval(tc)
 	
 	//act := NewActivity(getActivityMetadata())
@@ -123,7 +104,7 @@ func TestEval(t *testing.T) {
 	tc := test.NewTestActivityContext(getActivityMetadata())
 
 	//setup attrs
-	tc.SetInput("SET_MODE", "MAV_MODE_TEST_DISARMED")
+	tc.SetInput("COMPONENT_MODE", "ARM")
 	act.Eval(tc)
 
 	//check result attr
