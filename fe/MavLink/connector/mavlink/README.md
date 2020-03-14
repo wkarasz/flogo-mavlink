@@ -9,7 +9,7 @@ This connection allows you to configure properties necessary to establish a conn
 
 ### Flogo CLI
 ```bash
-flogo install github.com/wkarasz/flogo-mavlink/oss/connection
+flogo install github.com/wkarasz/flogo-mavlink/fe/MavLink/connection
 ```
 
 ## Configuration
@@ -28,9 +28,9 @@ A sample Mavlink connection JSON
 ```json
 {
  "settings": {
- "name": "mavlink.skyviper",
- "description": "",
- "port": "14550"
-}
+  "name": "mavlink.skyviper",
+  "description": "",
+  "port": "14550"
+ }
 }
 ```
