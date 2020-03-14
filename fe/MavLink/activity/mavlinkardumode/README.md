@@ -58,12 +58,11 @@ Inputs and Outputs:
   ]
 }
 ```
-## Inputs
+| ## Inputs |
 | Input            | Description    |
 |:-----------------|:---------------|
 | COMPONENT_MODE       | The ENUM for MAV_MODE; e.g. AUTO, LOITER, etc. |
-
-# Outputs
+| ## Outputs |
 | Output           | Description    |
 |:-----------------|:---------------|
 | result           | The result will contain a string response of the command or will contain an error message |

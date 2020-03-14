@@ -5,12 +5,12 @@ Communicate with Ardupilot system using Mavlink link.
 ## Installation
 Command for Flogo CLI:
 ```console
-flogo install github.com/wkarasz/flogo-mavlink/fe/MavLink/activity/mavlinksetwaypoints
+flogo install github.com/wkarasz/flogo-mavlink/fe/MavLink/activity/mavlinkuploadmission
 ```
 
 Link for Flogo Web UI:
 ```console
-https://github.com/wkarasz/flogo-mavlink/fe/MavLink/activity/mavlinksetwaypoints
+https://github.com/wkarasz/flogo-mavlink/fe/MavLink/activity/mavlinkuploadmission
 ```
 
 ## Schema
