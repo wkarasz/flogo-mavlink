@@ -74,7 +74,7 @@ e.g.
 ```
 
 
-# Outputs
+## Outputs
 | Output           | Description    |
 |:-----------------|:---------------|
 | result           | The result will contain a string response of the command or will contain an error message |
