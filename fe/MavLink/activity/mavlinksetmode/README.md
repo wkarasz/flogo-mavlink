@@ -72,7 +72,7 @@ Inputs and Outputs:
 |:-----------------|:---------------|
 | SET_MODE       | The ENUM of MAV_MODE |
 
-# Outputs
+## Outputs
 | Output           | Description    |
 |:-----------------|:---------------|
 | result           | The result will contain a string response of the command or will contain an error message |
