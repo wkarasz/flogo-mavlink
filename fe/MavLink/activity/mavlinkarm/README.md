@@ -62,7 +62,7 @@ Inputs and Outputs:
 |:-----------------|:---------------|
 | COMPONENT_MODE       | Set the mode of the component; e.g. ARM | DISARM |
 
-# Outputs
+## Outputs
 | Output           | Description    |
 |:-----------------|:---------------|
 | result           | The result will contain a string response of the command or will contain an error message |

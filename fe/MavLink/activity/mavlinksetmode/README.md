@@ -1,21 +1,52 @@
 # 	Mavlink SetMode - Activity
 
 Communicate with Ardupilot system using Mavlink link.
+This activity sets the mode of the system using the SetMode message type and standard values for BaseMode.
 
 ## Installation
 Command for Flogo CLI:
 ```console
-flogo install github.com/wkarasz/flogo-mavlink/oss/activity/setmode
+flogo install github.com/wkarasz/flogo-mavlink/fe/MavLink/activity/mavlinksetmode
 ```
 
 Link for Flogo Web UI:
 ```console
-https://github.com/wkarasz/flogo-mavlink/oss/activity/setmode
+https://github.com/wkarasz/flogo-mavlink/fe/MavLink/activity/mavlinksetmode
 ```
 
 ## Schema
 Inputs and Outputs:
 ```json
+{
+  "settings": [
+    {
+      "name": "connection",
+      "type": "connection",
+      "required": true,
+      "display": {
+        "name": "MavLink Connection",
+        "description": "Select your MavLink Connection",
+        "type": "connection",
+        "selection": "single"
+      },
+      "allowed": []
+    }
+  ],
+  "inputs": [
+    {
+      "name": "SET_MODE",
+      "type": "string",
+      "display": {
+        "name":"Mode",
+        "description": "Set the mode of the UAV",
+        "type":"dropdown",
+        "selection":"single",
+        "mappable": true
+      },
+      "allowed": [
+        "MAV_MODE_PREFLIGHT",
+        "MAV_MODE_STABILIZE_DISARMED",
+        "MAV_MODE_STABILIZE_ARMED", 
         "MAV_MODE_MANUAL_DISARMED",
         "MAV_MODE_MANUAL_ARMED",
         "MAV_MODE_GUIDED_DISARMED",
@@ -39,8 +70,7 @@ Inputs and Outputs:
 ## Inputs
 | Input            | Description    |
 |:-----------------|:---------------|
-| devicePath       | The path to the ELM device on the host system; e.g. /dev/ttyUSB0 |
-| directCmd        | The raw command supported by the ELM chipset; e.g. AT@1<br>https://www.elmelectronics.com/wp-content/uploads/2017/01/AT_Command_Table.pdf|
+| SET_MODE       | The ENUM of MAV_MODE |
 
 # Outputs
 | Output           | Description    |
