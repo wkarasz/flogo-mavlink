@@ -1,0 +1,44 @@
+{
+  "name": "mavlinkmissionstart",
+  "title": "Mission-Start",
+  "version": "0.0.2",
+  "type": "flogo:activity",
+  "display": {
+    "category": "MavLink",
+    "visible": true,
+    "smallIcon": "mavlink.png",
+    "description": "Mission start component"
+  },
+  "ref": "MavLink/activity/mavlinkmissionstart",
+  "author": "William Karasz",
+  "settings": [
+    {
+      "name": "connection",
+      "type": "connection",
+      "required": true,
+      "display": {
+        "name": "MavLink Connection",
+        "description": "Select your MavLink Connection",
+        "type": "connection",
+	"selection": "single"
+      },
+      "allowed": []
+    }
+  ],
+  "inputs": [
+    { 
+      "name": "param1",
+      "type": "string"
+    },
+    {
+      "name": "param2",
+      "type": "string"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "type": "string"
+    }
+  ]
+}
