@@ -59,11 +59,13 @@ func (*mavlinkFactory) NewManager(settings map[string]interface{}) (connection.M
 			gomavlib.EndpointUdpServer{"0.0.0.0:"+port},
 		},
 		Dialect:	ardupilotmega.Dialect,
+		OutVersion:	gomavlib.V2,
 		OutSystemId: 	10,
 	})
 	if err1 != nil {
 		return nil, err
 	}
+	logmavlinkconn.Debugf("===New node obtained===\n[%s]",node)
 	sharedConn.node = node
 	
 	/*
