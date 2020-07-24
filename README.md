@@ -13,8 +13,11 @@ Quite simply, the project is a Flogo extension, creating a new palette of activi
 - Listen to all events emitted by vehicle
 <br>
 <br>
-## Getting Started
+## Getting Started  
+  
+### Using Flogo Enterprise  
+- Upload the extension to Flogo Enterprise using the provided zip file **[MavLink.zip](https://raw.githubusercontent.com/wkarasz/flogo-mavlink/master/fe/MavLink.zip)**
+![Flogo Enterprise Studio](img/upload_extension.jpg "Upload Extension")<br>
+![Flogo Zip Extension](img/upload_zip_extension.jpg "Upload MavLink Zip File")<br>
 
-**Using Flogo Enterprise**  
-![Flogo Enterprise Studio](img/upload_extension.jpg "Upload Extension")
 
