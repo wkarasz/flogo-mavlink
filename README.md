@@ -20,4 +20,4 @@ Quite simply, the project is a Flogo extension, creating a new palette of activi
 ![Flogo Enterprise Studio](img/upload_extension.jpg "Upload Extension")<br>
 ![Flogo Zip Extension](img/upload_zip_extension.jpg "Upload MavLink Zip File")<br>
 
-
+<iframe width="1031" height="771" src="https://www.youtube.com/embed/jbJu6bpt55Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
