@@ -12,11 +12,15 @@ Quite simply, the project is a Flogo extension, creating a new palette of activi
 - Issue any generic MAV_CMD type
 - Listen to all events emitted by vehicle
 <br>
+<br>
 <b>Demo Video</b>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iFnUDRtWmmQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 ## Getting Started  
-  
+
+<b>Implementation Concept</b><br>
+\<Insert diagram showing how Flogo application and drone communicate\><br>
+<br>
 ### Using Flogo Enterprise  
 - Upload the extension to Flogo Enterprise using the provided zip file **[MavLink.zip](https://raw.githubusercontent.com/wkarasz/flogo-mavlink/master/fe/MavLink.zip)**<br>
 <img src="https://raw.githubusercontent.com/wkarasz/flogo-mavlink/master/img/upload_zip_extension.jpg"/><br>
