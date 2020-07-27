@@ -1,6 +1,6 @@
 # 	Flogo-Mavlink Project
 
-Welcome to the Flogo-Mavlink Project.<br>
+Welcome to the Flogo-Mavlink Project<br>
 <br>
 The goal of this project is to enable developers to access all the features of the Mavlink protocol from within the Flogo ecosystem ([Project Flogo](https://flogo.io) and [TIBCO Flogo Enterprise](https://www.tibco.com/products/tibco-flogo)].<br>
 <br>
@@ -15,7 +15,6 @@ Quite simply, the project is a Flogo extension, creating a new palette of activi
 <br>
 ## Getting Started  
   
-### Using Flogo Enterprise  
-- Upload the extension to Flogo Enterprise using the provided zip file **[MavLink.zip](https://raw.githubusercontent.com/wkarasz/flogo-mavlink/master/fe/MavLink.zip)**
-![Flogo Enterprise Studio](img/upload_extension.jpg "Upload Extension")<br>
-![Flogo Zip Extension](img/upload_zip_extension.jpg "Upload MavLink Zip File")<br>
+First, where to get started?   
+- Are you interested in using this extension in your Flogo project and how to use it?  Then checkout the repo's GitHub Pages site, [https://wkarasz.github.io/flogo-mavlink](https://wkarasz/github.io/flogo-mavlink)
+- Or are you wanting to explore the repo, study the code, and/or contribute to the project?  Then you're right where you need to be.
