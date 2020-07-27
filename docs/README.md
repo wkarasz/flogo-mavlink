@@ -19,7 +19,7 @@ Quite simply, the project is a Flogo extension, creating a new palette of activi
   
 ### Using Flogo Enterprise  
 - Upload the extension to Flogo Enterprise using the provided zip file **[MavLink.zip](https://raw.githubusercontent.com/wkarasz/flogo-mavlink/master/fe/MavLink.zip)**<br>
-<img width=600 src="https://raw.githubusercontent.com/wkarasz/flogo-mavlink/master/img/upload_zip_extension.jpg"/><br>
+<img src="https://raw.githubusercontent.com/wkarasz/flogo-mavlink/master/img/upload_zip_extension.jpg"/><br>
 <br>
 - Create a new application
   - Add the Mavlink activity or trigger
