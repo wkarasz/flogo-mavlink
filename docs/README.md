@@ -12,12 +12,17 @@ Quite simply, the project is a Flogo extension, creating a new palette of activi
 - Issue any generic MAV_CMD type
 - Listen to all events emitted by vehicle
 <br>
-** Demo Video **  
+<b>Demo Video</b>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iFnUDRtWmmQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br>
 ## Getting Started  
   
 ### Using Flogo Enterprise  
 - Upload the extension to Flogo Enterprise using the provided zip file **[MavLink.zip](https://raw.githubusercontent.com/wkarasz/flogo-mavlink/master/fe/MavLink.zip)**<br>
-<img width=600px src="https://raw.githubusercontent.com/wkarasz/flogo-mavlink/master/img/upload_zip_extension.jpg"/><br>
+<img width=600 src="https://raw.githubusercontent.com/wkarasz/flogo-mavlink/master/img/upload_zip_extension.jpg"/><br>
 <br>
+- Create a new application
+  - Add the Mavlink activity or trigger
+  - Configure the Mavlink connector
+- Build/compile target binary
+- Run the binary
