@@ -12,9 +12,8 @@ Quite simply, the project is a Flogo extension, creating a new palette of activi
 - Issue any generic MAV_CMD type
 - Listen to all events emitted by vehicle
 <br>
-<br>
 ## Getting Started  
   
 First, where to get started?   
-- Are you interested in using this extension in your Flogo project and how to use it?  Then checkout the repo's GitHub Pages site, [https://wkarasz.github.io/flogo-mavlink](https://wkarasz/github.io/flogo-mavlink)
-- Or are you wanting to explore the repo, study the code, and/or contribute to the project?  Then you're right where you need to be.
+- Are you interested in using this extension in your Flogo project and how to use it?  Then checkout the repo's GitHub Pages site, [https://wkarasz.github.io/flogo-mavlink](https://wkarasz.github.io/flogo-mavlink)
+- Do you want to explore the repo, study the code, and/or contribute to the project?  Then you're right where you need to be.
